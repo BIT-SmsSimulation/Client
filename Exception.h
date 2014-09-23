@@ -13,8 +13,6 @@
 
 NS_SMS_BEGIN
 
-typedef void (__thiscall * Callback)();
-
 class Exception
 {
 public:
