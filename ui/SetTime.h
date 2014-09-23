@@ -32,6 +32,9 @@ public:
         if (SetTime->objectName().isEmpty())
             SetTime->setObjectName(QString::fromUtf8("SetTime"));
         SetTime->resize(290, 130);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/icon/app.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        SetTime->setWindowIcon(icon);
         dateTimeEdit = new QDateTimeEdit(SetTime);
         dateTimeEdit->setObjectName(QString::fromUtf8("dateTimeEdit"));
         dateTimeEdit->setGeometry(QRect(30, 30, 230, 30));

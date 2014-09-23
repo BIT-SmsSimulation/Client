@@ -34,6 +34,9 @@ public:
         MainWindow->resize(210, 130);
         MainWindow->setMinimumSize(QSize(210, 130));
         MainWindow->setMaximumSize(QSize(230, 130));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/icon/app.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        MainWindow->setWindowIcon(icon);
         pushButton_4 = new QPushButton(MainWindow);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         pushButton_4->setGeometry(QRect(110, 70, 70, 30));

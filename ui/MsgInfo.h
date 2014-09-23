@@ -45,9 +45,12 @@ public:
         MsgInfo->resize(350, 420);
         MsgInfo->setMinimumSize(QSize(350, 420));
         MsgInfo->setMaximumSize(QSize(350, 420));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/icon/app.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        MsgInfo->setWindowIcon(icon);
         label = new QLabel(MsgInfo);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(30, 30, 50, 30));
+        label->setGeometry(QRect(20, 30, 60, 30));
         label->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lineEdit_2 = new QLineEdit(MsgInfo);
         lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
@@ -63,7 +66,7 @@ public:
         lineEdit->setReadOnly(true);
         label_2 = new QLabel(MsgInfo);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(30, 70, 50, 30));
+        label_2->setGeometry(QRect(20, 70, 60, 30));
         label_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         plainTextEdit = new QPlainTextEdit(MsgInfo);
         plainTextEdit->setObjectName(QString::fromUtf8("plainTextEdit"));
@@ -73,11 +76,11 @@ public:
         plainTextEdit->setReadOnly(true);
         label_3 = new QLabel(MsgInfo);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(30, 150, 50, 30));
+        label_3->setGeometry(QRect(20, 150, 60, 30));
         label_3->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         label_4 = new QLabel(MsgInfo);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(30, 110, 50, 30));
+        label_4->setGeometry(QRect(20, 110, 60, 30));
         label_4->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         dateTimeEdit = new QDateTimeEdit(MsgInfo);
         dateTimeEdit->setObjectName(QString::fromUtf8("dateTimeEdit"));

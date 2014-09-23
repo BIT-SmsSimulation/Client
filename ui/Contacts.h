@@ -39,6 +39,9 @@ public:
         Contacts->resize(290, 340);
         Contacts->setMinimumSize(QSize(290, 340));
         Contacts->setMaximumSize(QSize(290, 340));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/icon/app.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        Contacts->setWindowIcon(icon);
         lineEdit = new QLineEdit(Contacts);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
         lineEdit->setGeometry(QRect(80, 30, 100, 30));
@@ -47,7 +50,7 @@ public:
         pushButton->setGeometry(QRect(190, 30, 70, 30));
         label = new QLabel(Contacts);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(30, 30, 40, 30));
+        label->setGeometry(QRect(20, 30, 50, 30));
         label->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         listWidget = new QListWidget(Contacts);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));

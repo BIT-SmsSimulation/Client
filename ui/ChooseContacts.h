@@ -34,6 +34,9 @@ public:
         ChooseContacts->resize(290, 300);
         ChooseContacts->setMinimumSize(QSize(290, 300));
         ChooseContacts->setMaximumSize(QSize(290, 300));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/icon/app.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        ChooseContacts->setWindowIcon(icon);
         listWidget = new QListWidget(ChooseContacts);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
         listWidget->setGeometry(QRect(30, 30, 230, 200));

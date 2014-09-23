@@ -40,9 +40,12 @@ public:
         WriteMsg->resize(290, 340);
         WriteMsg->setMinimumSize(QSize(290, 340));
         WriteMsg->setMaximumSize(QSize(290, 340));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/icon/app.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        WriteMsg->setWindowIcon(icon);
         label = new QLabel(WriteMsg);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(30, 30, 40, 30));
+        label->setGeometry(QRect(20, 30, 50, 30));
         label->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lineEdit = new QLineEdit(WriteMsg);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));

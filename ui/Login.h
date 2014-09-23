@@ -41,9 +41,12 @@ public:
         Login->resize(300, 170);
         Login->setMinimumSize(QSize(300, 170));
         Login->setMaximumSize(QSize(300, 170));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/icon/app.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        Login->setWindowIcon(icon);
         label = new QLabel(Login);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(19, 30, 50, 30));
+        label->setGeometry(QRect(20, 30, 50, 30));
         label->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lineEdit = new QLineEdit(Login);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
@@ -57,7 +60,7 @@ public:
         pushButton_2->setGeometry(QRect(190, 110, 70, 30));
         label_2 = new QLabel(Login);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(19, 70, 50, 30));
+        label_2->setGeometry(QRect(20, 70, 50, 30));
         label_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lineEdit_2 = new QLineEdit(Login);
         lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
