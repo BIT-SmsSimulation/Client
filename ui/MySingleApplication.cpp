@@ -34,7 +34,8 @@ MySingleApplication::MySingleApplication(int argc, char ** argv)
 		return;
 	}
 
-	if (!server->listen(serverName)) {
+	if (!server->listen(serverName))
+	{
 		if (server->serverError() == QAbstractSocket::AddressInUseError
 			&& QFile::exists(server->serverName()))
 		{
