@@ -21,6 +21,10 @@ public:
 	MessageDao();
 	~MessageDao();
 
+#ifndef USE_MDB
+	virtual bool createTable();
+#endif // USE_MDB
+
 	/**
 	 * 根据ID获取短信记录
 	 */
