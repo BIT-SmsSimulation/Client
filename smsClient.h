@@ -16,5 +16,9 @@
 
 #define utf8(str) QString::fromUtf8(str)
 
+#ifdef _WIN32
+#define USE_MDB
+#endif // _WIN32
+
 #endif
 

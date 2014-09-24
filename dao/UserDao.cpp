@@ -331,6 +331,26 @@ int UserDao::findCountByOrMap(const QMap<QString, QVariant> & map)
 	}
 }
 
+#ifndef USE_MDB
+bool UserDao::createTable()
+{
+	try
+	{
+		QString sql = utf8("create table `") + User::className;
+		sql += utf8("` (`ID` char(36) primary key not null,");
+		sql += utf8("`NAME` varchar(45),");
+		sql += utf8("`CONTACT` char(11));");
+
+		executeSql(sql);
+		return true;
+	}
+	catch (...)
+	{
+		throw;
+	}
+}
+#endif // USE_MDB
+
 QList<User> & UserDao::getQueryResult(QSqlQuery * query)
 {
 	try

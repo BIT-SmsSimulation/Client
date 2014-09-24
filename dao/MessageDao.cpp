@@ -335,6 +335,29 @@ int MessageDao::findCountByOrMap(const QMap<QString, QVariant> & map)
 	}
 }
 
+#ifndef USE_MDB
+bool MessageDao::createTable()
+{
+	try
+	{
+		QString sql = utf8("create table `") + Message::className;
+		sql += utf8("` (`ID` char(36) primary key not null,");
+		sql += utf8("`CONTENT` text,");
+		sql += utf8("`SENDER_NUM` char(11),");
+		sql += utf8("`RECEIVER_NUM` char(11),");
+		sql += utf8("`TIME` timestamp,");
+		sql += utf8("`TYPE` int);");
+
+		executeSql(sql);
+		return true;
+	}
+	catch (...)
+	{
+		throw;
+	}
+}
+#endif // USE_MDB
+
 QList<Message> & MessageDao::getQueryResult(QSqlQuery * query)
 {
 	try
