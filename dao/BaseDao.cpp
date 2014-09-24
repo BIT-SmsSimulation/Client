@@ -28,12 +28,17 @@ bool BaseDao::connect()
 {
 	try
 	{
+#ifdef USE_MDB
 		const QString type = utf8("QODBC");
 		const QString dbFile = QCoreApplication::applicationDirPath()
 			+ utf8("/client.mdb").replace(QChar('/'), QChar('\\'));
 		const QString dsn = utf8("DRIVER={Microsoft Access Driver (*.mdb)};")
 			+ utf8("FIL={MS Access};DBQ=%1;").arg(dbFile);
-
+#else
+		const QString type = utf8("QSQLITE");
+		const QString dsn = utf8("db_sms.db");
+#endif // USE_MDB
+		
 		db = QSqlDatabase::database(QSqlDatabase::defaultConnection, false);
 		if (db.isValid())
 		{
@@ -120,5 +125,26 @@ QSqlQuery * BaseDao::executePreparedSql(QString sql, QList<QVariant> & params)
 		throw;
 	}
 }
+
+#ifndef USE_MDB
+bool BaseDao::tableExists(QString tableName)
+{
+	try
+	{
+		QString sql = utf8("select count(*) from `sqlite_master` where `type`='table' and `name`='%1'").arg(tableName);
+		QSqlQuery * query = executeSql(sql);
+
+		query->next();
+		if (query->value(0).toInt() == 0)
+			return false;
+		else
+			return true;
+	}
+	catch (...)
+	{
+		throw;
+	}
+}
+#endif // USE_MDB
 
 NS_SMS_END

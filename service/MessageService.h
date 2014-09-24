@@ -20,42 +20,42 @@ public:
 	~MessageService();
 
 	/**
-	 * ¸ù¾İÀàĞÍ»ñÈ¡¶ÌĞÅ¼ÇÂ¼
+	 * æ ¹æ®ç±»å‹è·å–çŸ­ä¿¡è®°å½•
 	 */
 	QList<Message> & getMessages(int type);
 
 	/**
-	 * ¸ù¾İ¹Ø¼ü×ÖËÑË÷¶ÌĞÅ¼ÇÂ¼
+	 * æ ¹æ®å…³é”®å­—æœç´¢çŸ­ä¿¡è®°å½•
 	 */
 	QList<Message> & getMessages(int type, QString keyword);
 
 	/**
-	 * ±£´æ¶ÌĞÅ¼ÇÂ¼
+	 * ä¿å­˜çŸ­ä¿¡è®°å½•
 	 */
 	bool saveMsg(Message & msg);
 
 	/**
-	 * ±à¼­¶ÌĞÅ¼ÇÂ¼£¬½öÏŞ²İ¸åºÍ¶¨Ê±¶ÌĞÅ
+	 * ç¼–è¾‘çŸ­ä¿¡è®°å½•ï¼Œä»…é™è‰ç¨¿å’Œå®šæ—¶çŸ­ä¿¡
 	 */
 	bool editMsg(Message & msg);
 
 	/**
-	 * ¸ù¾İIDÉ¾³ı¶ÌĞÅ¼ÇÂ¼
+	 * æ ¹æ®IDåˆ é™¤çŸ­ä¿¡è®°å½•
 	 */
 	bool deleteMessage(QString msgId);
 
 	/**
-	 * ¸ù¾İÁªÏµÈËºÅÂëÉ¾³ı¶ÌĞÅ¼ÇÂ¼
+	 * æ ¹æ®è”ç³»äººå·ç åˆ é™¤çŸ­ä¿¡è®°å½•
 	 */
 	bool deleteMessages(QString contact);
 
 	/**
-	 * ¸ù¾İIDÉ¾³ı¶àÌõ¶ÌĞÅ¼ÇÂ¼
+	 * æ ¹æ®IDåˆ é™¤å¤šæ¡çŸ­ä¿¡è®°å½•
 	 */
 	bool deleteMessages(QList<QString> & msgIds);
 
 	/**
-	 * ¸ù¾İÀàĞÍÇå¿Õ¶ÌĞÅ¼ÇÂ¼
+	 * æ ¹æ®ç±»å‹æ¸…ç©ºçŸ­ä¿¡è®°å½•
 	 */
 	bool deleteMessages(int type);
 

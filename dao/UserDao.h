@@ -32,6 +32,11 @@ public:
 	bool deleteById(QString id);
 
 	/**
+	 * 删除所有联系人
+	 */
+	bool deleteAll();
+
+	/**
 	 * 保存联系人
 	 */
 	bool save(User & entity);

@@ -23,6 +23,11 @@ protected:
 	QSqlQuery * executeSql(QString sql);
 	QSqlQuery * executePreparedSql(QString sql, QList<QVariant> & params);
 
+#ifndef USE_MDB
+	virtual bool createTable() = 0;
+	bool tableExists(QString tableName);
+#endif // USE_MDB
+
 protected:
 	QMutex mutex;
 

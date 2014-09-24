@@ -52,6 +52,22 @@ bool MessageDao::deleteById(QString id)
 	}
 }
 
+bool MessageDao::deleteAll()
+{
+	try
+	{
+		QString sql = utf8("delete from `") + Message::className + utf8("`;");
+
+		QSqlQuery * query = executeSql(sql);
+		delete query;
+		return true;
+	}
+	catch (...)
+	{
+		throw;
+	}
+}
+
 bool MessageDao::save(Message & entity)
 {
 	try
@@ -349,6 +365,11 @@ QList<Message> & MessageDao::getQueryResult(QSqlQuery * query)
 MessageDao::MessageDao()
 {
 	msgs = NULL;
+
+#ifndef USE_MDB
+	if (!tableExists(Message::className))
+		createTable();
+#endif // USE_MDB
 }
 
 MessageDao::~MessageDao()

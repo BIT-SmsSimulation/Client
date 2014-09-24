@@ -52,6 +52,22 @@ bool UserDao::deleteById(QString id)
 	}
 }
 
+bool UserDao::deleteAll()
+{
+	try
+	{
+		QString sql = utf8("delete from `") + User::className + utf8("`;");
+
+		QSqlQuery * query = executeSql(sql);
+		delete query;
+		return true;
+	}
+	catch (...)
+	{
+		throw;
+	}
+}
+
 bool UserDao::save(User & entity)
 {
 	try
@@ -342,6 +358,11 @@ QList<User> & UserDao::getQueryResult(QSqlQuery * query)
 UserDao::UserDao()
 {
 	users = NULL;
+
+#ifndef USE_MDB
+	if (!tableExists(User::className))
+		createTable();
+#endif // USE_MDB
 }
 
 UserDao::~UserDao()

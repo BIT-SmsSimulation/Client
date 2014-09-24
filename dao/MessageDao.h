@@ -32,6 +32,11 @@ public:
 	bool deleteById(QString id);
 
 	/**
+	 * 删除所有短信记录
+	 */
+	bool deleteAll();
+
+	/**
 	 * 保存短信记录
 	 */
 	bool save(Message & entity);
