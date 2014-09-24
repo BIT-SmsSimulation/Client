@@ -21,6 +21,7 @@
 
 #include "../smsClient.h"
 #include "../Exception.h"
+#include "MySingleApplication.h"
 #include "MyLogin.h"
 #include "MyMainWindow.h"
 
@@ -32,7 +33,13 @@ Q_DECLARE_METATYPE(Exception *);
 
 int main(int argc, char * argv[])
 {
-	QApplication app(argc, argv);
+	MySingleApplication app(argc, argv);
+	if (app.isRunning())
+	{
+		ERROR_P(NULL, utf8("错误"), utf8("同时只能运行一个实例！"));
+		return 0;
+	}
+
 	QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 	QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
