@@ -47,7 +47,7 @@ public:
         if (MsgRecord->objectName().isEmpty())
             MsgRecord->setObjectName(QString::fromUtf8("MsgRecord"));
         MsgRecord->resize(350, 340);
-        MsgRecord->setMinimumSize(QSize(290, 340));
+        MsgRecord->setMinimumSize(QSize(350, 340));
         MsgRecord->setMaximumSize(QSize(350, 340));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/icon/app.ico"), QSize(), QIcon::Normal, QIcon::Off);

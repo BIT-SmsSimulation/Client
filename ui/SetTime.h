@@ -32,6 +32,8 @@ public:
         if (SetTime->objectName().isEmpty())
             SetTime->setObjectName(QString::fromUtf8("SetTime"));
         SetTime->resize(290, 130);
+        SetTime->setMinimumSize(QSize(290, 130));
+        SetTime->setMaximumSize(QSize(290, 130));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/icon/app.ico"), QSize(), QIcon::Normal, QIcon::Off);
         SetTime->setWindowIcon(icon);

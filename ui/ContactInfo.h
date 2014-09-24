@@ -37,7 +37,7 @@ public:
         if (ContactInfo->objectName().isEmpty())
             ContactInfo->setObjectName(QString::fromUtf8("ContactInfo"));
         ContactInfo->resize(340, 170);
-        ContactInfo->setMinimumSize(QSize(290, 170));
+        ContactInfo->setMinimumSize(QSize(340, 170));
         ContactInfo->setMaximumSize(QSize(340, 170));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/icon/app.ico"), QSize(), QIcon::Normal, QIcon::Off);

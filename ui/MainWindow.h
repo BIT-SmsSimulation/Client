@@ -33,7 +33,7 @@ public:
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(210, 130);
         MainWindow->setMinimumSize(QSize(210, 130));
-        MainWindow->setMaximumSize(QSize(230, 130));
+        MainWindow->setMaximumSize(QSize(210, 130));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/icon/app.ico"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
