@@ -24,7 +24,7 @@ protected:
 	QSqlQuery * executePreparedSql(QString sql, QList<QVariant> & params);
 
 #ifndef USE_MDB
-	virtual bool createTable() = 0;
+	virtual bool createTable();
 	bool tableExists(QString tableName);
 #endif // USE_MDB
 
