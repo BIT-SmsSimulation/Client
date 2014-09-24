@@ -17,7 +17,7 @@ class BaseDao
 {
 protected:
 	BaseDao();
-	~BaseDao();
+	virtual ~BaseDao();
 	bool connect();
 	bool close();
 	QSqlQuery * executeSql(QString sql);
