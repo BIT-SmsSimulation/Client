@@ -37,5 +37,5 @@
 #define USE_MDB
 #endif // _WIN32
 
-#endif
+#endif // SMS_CLIENT_H_
 
