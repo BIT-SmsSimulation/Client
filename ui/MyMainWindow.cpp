@@ -191,4 +191,5 @@ void MyMainWindow::dealException(Exception * e)
 	CATCH_BLOCKS
 
 	delete e;
+	QApplication::quit();
 }

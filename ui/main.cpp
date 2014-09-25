@@ -60,13 +60,11 @@ int main(int argc, char * argv[])
 	login->deleteLater();
 
 	ConnectionService * server = new ConnectionService(phoneNum, serverIp);
-	server->startService();
-
 	MyMainWindow * mainWindow = new MyMainWindow(server);
 	server->connectGuiPartTo(mainWindow);
+	server->startService();
 	mainWindow->exec();
 	server->ShutdownService();
-
 	mainWindow->deleteLater();
 	server->deleteLater();
 	return 0;

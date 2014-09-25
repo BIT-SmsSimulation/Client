@@ -152,13 +152,13 @@ void ConnectionService::send()
 	try
 	{
 		socket->connectToHost(serverIp, sendPort);
-		if (!socket->waitForConnected(2000))
+		if (!socket->waitForConnected(500))
 			throw Exception("无法连接到服务器" + serverIp + "！");
 
 		socket->write(content.toUtf8());
 
 		socket->disconnectFromHost();
-		if (!socket->waitForDisconnected(2000))
+		if (!socket->waitForDisconnected(500))
 			throw Exception("无法连接到服务器" + serverIp + "！");
 	}
 	catch (...)

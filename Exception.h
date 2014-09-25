@@ -110,7 +110,8 @@ ERROR(utf8("未知错误"), utf8("发生了未知错误！"));\
 
 #define CATCH_BLOCKS_OUTER catch (Exception & e)\
 {\
-emit(exceptionThrown(new Exception(e)));\
+Exception * ex = new Exception(e);\
+emit(exceptionThrown(ex));\
 }
 
 #endif // EXCEPTION_H_
